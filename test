@@ -1,0 +1,34 @@
+//QString file_name = QFileDialog :: getSaveFileName(this, "Open this file");
+
+    //file_path = file_name;
+
+    QFile file(file_path);
+
+    if(!file.open(QFile :: WriteOnly | QFile :: Text)){
+        QMessageBox :: warning(this, "WARNING", "This file can't not open");
+        return;
+    }
+
+    QTextStream S(&file);
+
+    S << ui->textEdit->toPlainText();
+
+    file.flush();
+    file.close();
+//QString file_name = QFileDialog :: getSaveFileName(this, "Open this file");
+
+    //file_path = file_name;
+
+    QFile file(file_path);
+
+    if(!file.open(QFile :: WriteOnly | QFile :: Text)){
+        QMessageBox :: warning(this, "WARNING", "This file can't not open");
+        return;
+    }
+
+    QTextStream S(&file);
+
+    S << ui->textEdit->toPlainText();
+
+    file.flush();
+    file.close();
